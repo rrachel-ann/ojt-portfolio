@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OJT portfolio of Rachel Ann Dv. Capongan, UI/UX Design and Database Intern from Bulacan State University – College of Industrial Technology.">
-  <title>Rachel Ann Dv. Capongan | OJT Portfolio</title>
+  <meta name="description" content="OJT portfolio of Rachel Ann DV. Capongan, UI/UX Design and Database Intern from Bulacan State University – College of Industrial Technology.">
+  <title>Rachel Ann DV. Capongan | OJT Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -26,12 +30,15 @@
 
     <!-- ========== A. HERO ========== -->
     <section class="hero" aria-labelledby="hero-name">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <img class="avatar" src="assets/img/profile.jpg" alt="Professional portrait of Rachel Ann Dv. Capongan" width="280" height="280">
+        <img class="avatar" src="assets/img/profile.jpg" alt="Professional portrait of Rachel Ann DV. Capongan" width="280" height="280">
 
         <div class="hero-text">
+          <p class="status-pill"><span class="dot" aria-hidden="true"></span>Open for OJT · 2nd Sem, A.Y. 2026–2027</p>
           <p class="eyebrow">Hello, I'm</p>
-          <h1 id="hero-name">Rachel Ann Dv. Capongan</h1>
+          <h1 id="hero-name">Rachel Ann DV. Capongan</h1>
           <p class="role">Aspiring UI/UX Designer &amp; Database Intern</p>
 
           <ul class="metrics" aria-label="Internship metrics">
@@ -78,10 +85,11 @@
           <article class="card">
             <h3>Core Competencies</h3>
             <ul class="bullets">
-              <li>Rapid AI-assisted prototyping</li>
-              <li>Responsive layout debugging</li>
-              <li>Clear technical documentation</li>
-              <li>Version control basics with Git/GitHub</li>
+              <li>UI/UX design in Figma: websites, mobile apps and system interfaces</li>
+              <li>Android app development with Kotlin and Jetpack Compose</li>
+              <li>Database design and SQL: Room, Firebase Firestore, MySQL</li>
+              <li>Arduino/ESP32 projects and hardware troubleshooting</li>
+              <li>Problem-solving, time management and teamwork</li>
             </ul>
           </article>
         </div>
@@ -104,14 +112,14 @@
           <article class="card">
             <h3>Design &amp; Front-End</h3>
             <ul class="tags">
-              <li>Figma</li><li>UI/UX Design</li><li>HTML5</li><li>CSS3</li><li>Flexbox</li><li>CSS Grid</li><li>Responsive Design</li>
+              <li>Figma</li><li>UI/UX Design</li><li>HTML5</li><li>CSS3</li><li>Responsive Design</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Tools &amp; Platforms</h3>
             <ul class="tags">
-              <li>Git / GitHub</li><li>VS Code</li><li>Android Studio</li><li>MySQL Workbench</li><li>phpMyAdmin</li><li>Claude</li><li>ChatGPT</li><li>Cursor</li><li>GitHub Copilot</li>
+              <li>Git / GitHub</li><li>VS Code</li><li>Android Studio</li><li>MySQL Workbench</li><li>phpMyAdmin</li><li>Claude</li>
             </ul>
           </article>
 
@@ -162,7 +170,10 @@
               <p class="project-role">Role: UI/UX Designer</p>
               <p>A student concept redesign of the Bulacan State University website, designed in Figma. It focuses on a cleaner layout and easier navigation, bringing announcements, news, and the university calendar into clear, scannable sections for students and visitors.</p>
               <ul class="tags tags-small"><li>Figma</li><li>UI/UX Design</li><li>Web Design</li></ul>
-              <p class="project-note">Concept project, not the official BulSU website. Figma file available upon request.</p>
+              <div class="project-links">
+                <a class="btn btn-small btn-primary" href="https://www.figma.com/site/naeOxocysFtBs7yg2OOiCs/IIDD2_BulSUWebsiteRedesign_CaponganRachelAnn_4CG1?node-id=0-3&amp;t=Pew9NRrrELNOkKH2-1" target="_blank" rel="noopener noreferrer">View Figma Design</a>
+              </div>
+              <p class="project-note">Concept project, not the official BulSU website.</p>
             </div>
           </article>
 
@@ -192,11 +203,30 @@
   <!-- ========== F. FOOTER ========== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 Rachel Ann Dv. Capongan. All Rights Reserved.</p>
+      <p>&copy; 2026 Rachel Ann DV. Capongan. All Rights Reserved.</p>
       <p>College of Industrial Technology, Bulacan State University</p>
       <a class="back-to-top" href="#top">&uarr; Back to Top</a>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var items = document.querySelectorAll('.card, .section-title, .hero-text, .avatar, .contact-inner > *');
+      items.forEach(function (el, i) { el.classList.add('reveal'); el.style.setProperty('--d', (i % 4) * 90 + 'ms'); });
+      if (!('IntersectionObserver' in window) || reduce) { items.forEach(function (el) { el.classList.add('in'); }); }
+      else {
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+        items.forEach(function (el) { io.observe(el); });
+      }
+      var links = document.querySelectorAll('.nav-links a');
+      if ('IntersectionObserver' in window) {
+        var so = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); }); } });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        document.querySelectorAll('main section[id]').forEach(function (sec) { so.observe(sec); });
+      }
+    })();
+  </script>
 </body>
 </html>
