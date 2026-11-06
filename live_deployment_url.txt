@@ -1,0 +1,3 @@
+Student Full Name: Rachel Ann Dv. Capongan
+GitHub Repository URL: https://github.com/rrachel-ann/ojt-portfolio
+Active Live Deployment URL: https://rrachel-ann.github.io/ojt-portfolio/
