@@ -473,3 +473,10 @@ main { counter-reset: sec; }
 .back-to-top { color: #fff; border-color: #b78aa0; font-size: .95rem; }
 .contact .section-title { margin-left: auto; margin-right: auto; text-align: center; }
 .contact .section-title::after { left: 50%; transform: translateX(-50%); }
+
+/* ---------- Wide third project card ---------- */
+@media (min-width: 900px) {
+  .project-wide { grid-column: 1 / -1; flex-direction: row; }
+  .project-wide img { width: 50%; aspect-ratio: auto; border-bottom: 0; border-right: 2px solid var(--plum); }
+  .project-wide .project-body { width: 50%; justify-content: center; }
+}
