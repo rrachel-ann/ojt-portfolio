@@ -276,3 +276,6 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-
 }
 
 .project-note { margin-top: auto; padding-top: 0.75rem; font-size: 0.88rem; font-style: italic; color: var(--text-muted); }
+
+@media (min-width: 640px) { .card-wide { grid-column: 1 / -1; } }
+.project-links + .project-note { margin-top: 0; padding-top: 0; }
