@@ -363,3 +363,90 @@ h1, h2, .section-title, .card h3 { font-family: var(--font-head); letter-spacing
   .blob, .avatar, .status-pill .dot { animation: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ==========================================================
+   MAXIMALIST LAYER — bold, layered, still professional
+   ========================================================== */
+:root { --pink-soft: #f6a9c6; --plum: #3b1230; }
+main { counter-reset: sec; }
+
+/* Hero: dots, bigger type, marker role */
+.hero { padding: 4rem 0 4.5rem; background:
+  radial-gradient(#f3bcd3 1.4px, transparent 1.4px) 0 0 / 24px 24px,
+  linear-gradient(135deg, #ffe3ee 0%, #fff6f9 55%, #fff0cf 100%); }
+.hero h1 { font-size: clamp(2.3rem, 8vw, 4.4rem); line-height: 1.05; }
+.role { display: inline; font-size: clamp(1.1rem, 3.2vw, 1.5rem); background: linear-gradient(transparent 58%, #ffd98a 58%); padding: 0 .2rem; }
+.hero-text .metrics { margin-top: 1.6rem; }
+.metrics li { border: 2px solid var(--plum); border-left-width: 6px; box-shadow: 4px 4px 0 var(--pink-soft); }
+
+/* Avatar with spinning dashed ring + stickers */
+.avatar-wrap { position: relative; display: inline-block; }
+.avatar-wrap::before { content: ""; position: absolute; inset: -18px; border: 2px dashed var(--primary); border-radius: 50%; animation: spin 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.sticker { position: absolute; font-weight: 800; font-size: .8rem; letter-spacing: .5px; padding: .4rem .8rem; border: 2px solid var(--plum); border-radius: 999px; box-shadow: 3px 3px 0 var(--plum); white-space: nowrap; }
+.s1 { top: 6px; left: -22px; background: var(--accent); color: var(--plum); transform: rotate(-8deg); }
+.s2 { bottom: 34px; right: -26px; background: var(--primary); color: #fff; transform: rotate(7deg); }
+.s3 { bottom: -6px; left: 8px; background: #fff; color: var(--primary-dark); transform: rotate(-4deg); }
+
+/* Marquee ticker */
+.marquee { background: var(--plum); border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); overflow: hidden; white-space: nowrap; padding: .75rem 0; }
+.marquee-track { display: inline-block; animation: scroll 38s linear infinite; font-family: var(--font-head); font-weight: 700; letter-spacing: 2px; color: #fff; font-size: 1.05rem; }
+.marquee-track span { margin: 0 1rem; }
+.marquee-track i { color: var(--accent); font-style: normal; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+
+/* Stats */
+.stats-wrap { padding: 2.5rem 0 0; }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.stats li { background: #fff; border: 2px solid var(--plum); border-radius: var(--radius); padding: 1rem 1.1rem; box-shadow: 5px 5px 0 var(--accent); text-align: center; }
+.stats strong { display: block; font-family: var(--font-head); font-size: 2.6rem; line-height: 1; background: linear-gradient(100deg, var(--primary-dark), #d0457f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stats span { font-size: .85rem; font-weight: 600; color: var(--text-muted); }
+@media (min-width: 760px) { .stats { grid-template-columns: repeat(4, 1fr); } .stats li:nth-child(even) { transform: translateY(8px); } }
+
+/* Numbered section titles */
+.section-title { counter-increment: sec; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; }
+.section-title::before { content: "0" counter(sec); display: inline-block; font-family: var(--font); font-size: .78rem; font-weight: 800; letter-spacing: 2px; color: var(--plum); background: var(--accent); border: 2px solid var(--plum); border-radius: 999px; padding: .15rem .7rem; margin-bottom: .6rem; transform: rotate(-3deg); }
+.section-title { display: flex; flex-direction: column; align-items: flex-start; }
+.contact .section-title { align-items: center; }
+.contact .section-title::before { background: var(--accent); }
+
+/* Section backgrounds */
+.section-alt { background: radial-gradient(#f1b6cf 1.4px, transparent 1.4px) 0 0 / 22px 22px, #fff0f6; }
+
+/* Cards: thick outline + hard offset shadow */
+.card { border: 2px solid var(--plum); box-shadow: 6px 6px 0 var(--pink-soft); }
+.card:nth-child(even) { box-shadow: 6px 6px 0 var(--accent); }
+.card:not(.project)::before { display: none; }
+.card:hover { box-shadow: 9px 9px 0 var(--primary); }
+.js .card.reveal.in:hover { transform: translate(-3px, -3px); }
+.card h3 { font-size: 1.3rem; }
+.project img { border-bottom: 2px solid var(--plum); }
+
+/* Multi-coloured tags */
+.tags li { border-width: 2px; border-color: var(--plum); background: #fff; color: var(--plum); }
+.tags li:nth-child(3n+1) { background: #fbd3e3; }
+.tags li:nth-child(3n+2) { background: #ffe9b3; }
+.tags li:nth-child(3n) { background: var(--plum); color: #ffe0ee; }
+
+/* Buttons: chunky */
+.btn { border-width: 2px; border-color: var(--plum); box-shadow: 3px 3px 0 var(--plum); }
+.btn-primary { background: var(--primary); }
+.btn:hover, .btn:focus-visible { box-shadow: 5px 5px 0 var(--plum); transform: translate(-2px, -2px); }
+.btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--plum); }
+.contact .btn { border-color: #fff; box-shadow: 4px 4px 0 var(--accent); }
+
+/* Contact: stripes + big heading */
+.contact { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.045) 0 14px, transparent 14px 28px), linear-gradient(135deg, #7d1f4b, #3b1230); padding: 5rem 0; }
+.contact .section-title { font-size: clamp(1.8rem, 5vw, 3rem); }
+.contact::after { content: "✦"; position: absolute; left: 6%; bottom: 8%; font-size: 4rem; color: rgba(233,180,76,.35); }
+
+/* Footer watermark */
+.site-footer { position: relative; overflow: hidden; }
+.site-footer::before { content: "RC"; position: absolute; right: -10px; bottom: -40px; font-family: var(--font-head); font-weight: 800; font-size: 11rem; color: rgba(255,255,255,.05); line-height: 1; }
+
+@media (max-width: 420px) {
+  .sticker { font-size: .7rem; padding: .3rem .6rem; }
+  .s1 { left: -10px; } .s2 { right: -12px; }
+  .btn { box-shadow: 3px 3px 0 var(--plum); }
+}
+@media (prefers-reduced-motion: reduce) { .marquee-track, .avatar-wrap::before { animation: none !important; } }
